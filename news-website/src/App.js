@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Nav from "./components/Nav";
+import FeaturedNews from "./components/FeaturedNews";
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
         <div className="App">
             <Header />
             <Nav />
+            <FeaturedNews />
         </div>
     );
 }
