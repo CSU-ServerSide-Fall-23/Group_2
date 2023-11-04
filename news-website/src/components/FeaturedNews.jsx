@@ -13,11 +13,12 @@ function FeaturedNews() {
     useEffect(() => {
         axios
             .get(
-                `${API_BASE_URL}/top-headlines?country=us&category=general&apiKey=${API_KEY}`
+                `${API_BASE_URL}/top-headlines?category=general&lang=en&apikey=${API_KEY}`
             )
             .then((response) => {
                 setNewsArticles(response.data.articles);
                 setLoading(false);
+                console.log(response.data.articles);
             })
             .catch((error) => {
                 console.error("Error fetching news for featured", error);
@@ -36,8 +37,10 @@ function FeaturedNews() {
                                 <div className="carousel-inner">
                                     {newsArticles.map((article, index) => (
                                         <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={article.url}>
-                                            <div className="image-overlay"></div>
-                                            <img src={article.urlToImage || placeholder} className="d-block w-100" alt={article.title} style={{ maxHeight: '750px', height: '750px', objectFit: 'cover' }}/>
+                                            <a href={article.url} target="_blank">
+                                                <div className="image-overlay"></div>
+                                                <img src={article.image || placeholder} className="d-block w-100" alt={article.title} style={{ maxHeight: '750px', height: '750px', objectFit: 'cover' }}/>
+                                            </a>
                                             <div className="d-block carousel-caption">
                                                 <h5 className="fw-bolder">{article.title}</h5>
                                             </div>
@@ -61,7 +64,7 @@ function FeaturedNews() {
                                 <h1 className="text-md-start text-white fw-bolder text-uppercase text-sm-center m-0">Happening Now</h1>
                                 {newsArticles.slice(0, 2).map((article, index) => (
                                     <div className="card text-bg-dark" key={article.url}>
-                                        <img src={article.urlToImage || placeholder} className="card-img" alt={article.title || "Untitled"} />
+                                        <img src={article.image || placeholder} className="card-img" alt={article.title || "Untitled"} />
                                         <div className="card-img-overlay d-flex align-items-end justify-content-start gap-3">
                                             <p className="card-title m-0">{article.author ? `${article.author.substring(0, 10)}...` : 'Untitled'}</p>
                                             <p className="card-text">{article.publishedAt ? article.publishedAt.substring(0, 10) : ''}</p>
