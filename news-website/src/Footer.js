@@ -11,11 +11,11 @@ const Footer = () => {
           </div>
           <div className="col-md-3">
             <h4>Categories</h4>
-            <ul>
-              <li>Politics</li>
-              <li>Technology</li>
-              <li>Entertainment</li>
-              <li>Sports</li>
+            <ul style={{ listStyleType: 'none', padding: 0 }}>
+              <li style={{ marginBottom: '5px' }}>Politics</li>
+              <li style={{ marginBottom: '5px' }}>Technology</li>
+              <li style={{ marginBottom: '5px' }}>Entertainment</li>
+              <li style={{ marginBottom: '5px' }}>Sports</li>
             </ul>
           </div>
           <div className="col-md-3">
