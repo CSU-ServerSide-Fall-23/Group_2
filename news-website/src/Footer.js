@@ -22,7 +22,7 @@ const Footer = () => {
             <h4>Contact Us</h4>
             <address>
               <p>Email one: kola_shreya@students.columbusstate.edu</p>
-              <p>Email two: furlong_logan@students.columbusstate.edu</p>
+              <p>Email two: mills_maria@students.columbusstate.edu</p>
               <p>Email three: furlong_logan@students.columbusstate.edu</p>
               4225 University Ave<br />
               Columbus, GA 31907<br />
