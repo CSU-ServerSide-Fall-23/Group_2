@@ -40,21 +40,23 @@ function App() {
             <Nav />
             <FeaturedNews />
 
-            {/* Render categories */}
+            {/* Render categories with API key */}
             {categories.map((category, index) => (
-
                 <Category
-                key={index}
-                categoryName={category.name}
-                categoryDescription={category.description}
+                    key={index}
+                    categoryName={category.name}
+                    categoryDescription={category.description}
+                    apiKey="YOUR_API_KEY" 
                 />
             ))}
 
-            {/* Render news feed */}
-            <NewsFeed newsItems={newsItems} />    
+            {/* Render NewsFeed with API key */}
+            <NewsFeed apiKey="YOUR_NEWS_API_KEY" />    
+
+            {/* Render NewsCard with API key */}
+            <NewsCard apiKey="YOUR_NEWS_API_KEY" />
 
             <Footer />
-            <NewsCard />
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const NewsCard = ({ apiKey }) => {
+const NewsFeed = ({ apiKey }) => {
   const [newsData, setNewsData] = useState(null);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const NewsCard = ({ apiKey }) => {
   }, [apiKey]);
 
   return (
-    <div className="news-card">
+    <div className="news-feed">
       <h2>Latest News</h2>
       <ul>
         {newsData &&
@@ -40,4 +40,5 @@ const NewsCard = ({ apiKey }) => {
   );
 };
 
-export default NewsCard;
+export default NewsFeed;
+
