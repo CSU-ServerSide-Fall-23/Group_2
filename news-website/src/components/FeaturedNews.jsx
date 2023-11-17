@@ -35,7 +35,7 @@ function FeaturedNews() {
                         <div className="col-lg-8 col-md-12 p-0">
                             <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                                 <div className="carousel-inner">
-                                    {newsArticles.map((article, index) => (
+                                    {newsArticles.slice(2).map((article, index) => (
                                         <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={article.url}>
                                             <a href={article.url} target="_blank">
                                                 <div className="image-overlay"></div>
@@ -66,7 +66,7 @@ function FeaturedNews() {
                                     <div className="card text-bg-dark" key={article.url}>
                                         <img src={article.image || placeholder} className="card-img" alt={article.title || "Untitled"} />
                                         <div className="card-img-overlay d-flex align-items-end justify-content-start gap-3">
-                                            <p className="card-title m-0">{article.author ? `${article.author.substring(0, 10)}...` : 'Untitled'}</p>
+                                            <p className="card-title m-0">{article.source.name ? `${article.source.name.substring(0, 10)}...` : 'Untitled'}</p>
                                             <p className="card-text">{article.publishedAt ? article.publishedAt.substring(0, 10) : ''}</p>
                                         </div>
                                     </div>
