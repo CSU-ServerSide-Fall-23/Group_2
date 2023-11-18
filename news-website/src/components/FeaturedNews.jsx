@@ -56,15 +56,6 @@ function FeaturedNews() {
         <section id="breaking-news">
             <div className="container-fluid d-grid bg-black">
                 <div className="text-center">
-                <ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
-                        {['general', 'business', 'entertainment', 'health', 'science', 'technology'].map((category) => (
-                            <Category
-                                key={category}
-                                name={category}
-                                onClick={handleCategoryChange}
-                            />
-                        ))}
-                    </ul>
                     <NewsFeed articles={newsArticles} />
                 </div>
                     <div className="row">
