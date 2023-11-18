@@ -1,41 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-const NewsCard = ({ apiKey }) => {
-  const [newsData, setNewsData] = useState(null);
-
-  useEffect(() => {
-    // Fetch news data from the API
-    const fetchNews = async () => {
-      try {
-        const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`
-        );
-
-        setNewsData(response.data.articles);
-      } catch (error) {
-        console.error('Error fetching news data:', error);
-      }
-    };
-
-    fetchNews();
-  }, [apiKey]);
-
+const NewsCard = ({ article }) => {
   return (
-    <div className="news-card">
-      <h2>Latest News</h2>
-      <ul>
-        {newsData &&
-          newsData.map((article, index) => (
-            <li key={index}>
-              <h3>{article.title}</h3>
-              <p>{article.description}</p>
-              <a href={article.url} target="_blank" rel="noopener noreferrer">
-                Read more
-              </a>
-            </li>
-          ))}
-      </ul>
+    <div className="card text-bg-dark" key={article.url}>
+      <img src={article.image || placeholder} className="card-img" alt={article.title || "Untitled"} />
+      <div className="card-img-overlay d-flex align-items-end justify-content-start gap-3">
+        <p className="card-title m-0">{article.source.name ? `${article.source.name.substring(0, 10)}...` : 'Untitled'}</p>
+        <p className="card-text">{article.publishedAt ? article.publishedAt.substring(0, 10) : ''}</p>
+      </div>
     </div>
   );
 };

@@ -1,44 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import NewsCard from './NewsCard';
 
-const NewsFeed = ({ apiKey }) => {
-  const [newsData, setNewsData] = useState(null);
-
-  useEffect(() => {
-    // Fetch news data from the API
-    const fetchNews = async () => {
-      try {
-        const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`
-        );
-
-        setNewsData(response.data.articles);
-      } catch (error) {
-        console.error('Error fetching news data:', error);
-      }
-    };
-
-    fetchNews();
-  }, [apiKey]);
-
+const NewsFeed = ({ articles }) => {
   return (
-    <div className="news-feed">
-      <h2>Latest News</h2>
-      <ul>
-        {newsData &&
-          newsData.map((article, index) => (
-            <li key={index}>
-              <h3>{article.title}</h3>
-              <p>{article.description}</p>
-              <a href={article.url} target="_blank" rel="noopener noreferrer">
-                Read more
-              </a>
-            </li>
-          ))}
-      </ul>
+    <div className="d-flex flex-column flex-grow-1 gap-4 gap-xl-3 my-4 px-md-3 mx-auto mx-xl-5">
+      <h1 className="text-md-start text-white fw-bolder text-uppercase text-sm-center m-0">News Feed</h1>
+      {articles.map((article) => (
+        <NewsCard key={article.url} article={article} />
+      ))}
     </div>
   );
 };
 
 export default NewsFeed;
-

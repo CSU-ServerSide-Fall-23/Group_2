@@ -1,4 +1,5 @@
 import React from 'react';
+import Category from './Category'
 
 const Footer = () => {
   return (
@@ -12,10 +13,16 @@ const Footer = () => {
           <div className="col-md-3">
             <h4>Categories</h4>
             <ul style={{ listStyleType: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '5px' }}>Politics</li>
-              <li style={{ marginBottom: '5px' }}>Technology</li>
-              <li style={{ marginBottom: '5px' }}>Entertainment</li>
-              <li style={{ marginBottom: '5px' }}>Sports</li>
+              {['Politics', 'Technology', 'Entertainment', 'Sports'].map((category) => (
+                <Category
+                  key={category}
+                  name={category}
+                  onClick={(selectedCategory) => {
+                    // Implement category selection logic here if needed
+                    console.log(`Selected category: ${selectedCategory}`);
+                  }}
+                />
+              ))}
             </ul>
           </div>
           <div className="col-md-3">
