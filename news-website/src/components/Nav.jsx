@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav() {
     return (
@@ -13,22 +14,22 @@ function Nav() {
                             <a className="nav-link active text-white" aria-current="page" href="/">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-white" href="/business">Business</a>
+                            <Link className="nav-link text-white" to="/category/business">Business</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-white" href="/entertainment">Entertainment</a>
+                            <Link className="nav-link text-white" to="/category/entertainment">Entertainment</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-white" href="#">General</a>
+                            <Link className="nav-link text-white" to="/category/general">General</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-white" href="#">Health</a>
+                            <Link className="nav-link text-white" to="/category/health">Health</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-white" href="#">Science</a>
+                            <Link className="nav-link text-white" to="/category/science">Science</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-white" href="#">Technology</a>
+                            <Link className="nav-link text-white" to="/category/technology">Technology</Link>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
