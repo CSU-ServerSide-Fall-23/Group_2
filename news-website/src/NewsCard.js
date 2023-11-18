@@ -1,4 +1,5 @@
 import React from 'react';
+import placeholder from './assets/images/news-placeholder.jpg';
 
 const NewsCard = ({ article }) => {
   return (
