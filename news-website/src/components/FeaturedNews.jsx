@@ -29,28 +29,6 @@ function FeaturedNews() {
             });
     }, []);
 
-    const [selectedCategory, setSelectedCategory] = useState('general');
-
-    const handleCategoryChange = (category) => {
-        // Fetch news articles based on the selected category
-        axios
-            .get(
-                `${API_BASE_URL}/top-headlines?category=${category}&lang=en&apikey=${API_KEY}`
-            )
-            .then((response) => {
-                setNewsArticles(response.data.articles);
-                setLoading(false);
-                console.log(response.data.articles);
-            })
-            .catch((error) => {
-                console.error("Error fetching news for featured", error);
-                setError(error);
-                setLoading(false);
-            });
-
-        // Update the selected category
-        setSelectedCategory(category);
-    };
 
     return (
         <section id="breaking-news">
