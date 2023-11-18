@@ -10,4 +10,4 @@ const Category = ({ name, onClick }) => {
   );
 };
 
-export default Category;
+export default React.memo(Category);
