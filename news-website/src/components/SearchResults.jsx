@@ -18,8 +18,8 @@ function SearchResults() {
                 const data = await response.json();
                 setSearchResults(data.articles || []);
             } catch (error) {
-                console.error("Error fetching search results", error);
                 // Handle error
+                console.error("Error fetching search results", error);
             }
         };
 
@@ -34,7 +34,6 @@ function SearchResults() {
                     <p>No results found</p>
                 ) : (
                     searchResults.map((article, index) => (
-                        // Each card is placed in a column that spans 3 of the 12 total columns on medium and larger screens
                         <div className="col-md-3" key={article.url || index}>
                             <NewsCard article={article} />
                         </div>

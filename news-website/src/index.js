@@ -7,7 +7,6 @@ import Category from "./components/Category";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import SearchResults from "./components/SearchResults";
 import FeaturedNews from "./components/FeaturedNews";
-import NewsFeed from "./NewsFeed";
 
 const router = createBrowserRouter([
     {
