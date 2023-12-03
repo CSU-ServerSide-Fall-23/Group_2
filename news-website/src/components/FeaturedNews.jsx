@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import placeholder from '../assets/images/news-placeholder.jpg';
 import NewsFeed from "../NewsFeed";
+import Article from './Article';
 
 function FeaturedNews() {
     const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
