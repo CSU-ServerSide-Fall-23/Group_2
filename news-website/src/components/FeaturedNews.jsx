@@ -66,13 +66,7 @@ function FeaturedNews() {
                             <div className="d-flex flex-column flex-grow-1 gap-4 gap-xl-3 my-4 px-md-3 mx-auto mx-xl-5">
                                 <h1 className="text-md-start text-white fw-bolder text-uppercase text-sm-center m-0">Happening Now</h1>
                                 {newsArticles.slice(0, 2).map((article) => (
-                                    <div className="card text-bg-dark" key={article.url}>
-                                        <img src={article.image || placeholder} className="card-img" alt={article.title || "Untitled"} />
-                                        <div className="card-img-overlay d-flex align-items-end justify-content-start gap-3">
-                                            <p className="card-title m-0">{article.source.name ? `${article.source.name.substring(0, 10)}...` : 'Untitled'}</p>
-                                            <p className="card-text">{article.publishedAt ? article.publishedAt.substring(0, 10) : ''}</p>
-                                        </div>
-                                    </div>
+                                  <Article key={article.url} article={article} />
                                 ))}
                             </div>
                         </div>
