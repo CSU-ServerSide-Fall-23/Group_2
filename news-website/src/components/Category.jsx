@@ -21,7 +21,7 @@ function Category() {
                 setLoading(false);
             })
             .catch(error => {
-                console.error("Error fetching business news", error);
+                console.error("Error fetching news", error);
                 setError(error);
                 setLoading(false);
             });
