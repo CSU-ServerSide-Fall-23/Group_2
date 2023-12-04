@@ -33,13 +33,13 @@ function Nav() {
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
+                                Other
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
+                                <li><a className="dropdown-item" href="https://gnews.io/" target="_blank">API Source</a></li>
+                                <li><a className="dropdown-item" href="https://github.com/CSU-ServerSide-Fall-23/Group_2" target="_blank">GitHub</a></li>
                                 <li><hr className="dropdown-divider"/></li>
-                                <li><a className="dropdown-item" href="#">Support</a></li>
+                                <li><a className="dropdown-item" href="https://github.com/CSU-ServerSide-Fall-23/Group_2/issues" target="_blank">Support</a></li>
                             </ul>
                         </li>
                     </ul>
