@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Article = ({ article }) => {
   const history = useHistory();
