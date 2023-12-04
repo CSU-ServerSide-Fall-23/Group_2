@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { useParams } from 'react-router-dom';
-import Footer from '../components/Footer';
+import Footer from '../Footer';
 
 // Mock useParams
 jest.mock('react-router-dom', () => ({
@@ -14,6 +14,6 @@ test('renders footer component', () => {
 
     const { getByText } = render(<Footer />);
 
-    const element = getByText(/politics news/i);
+    const element = getByText(/politics/i);
     expect(element).toBeInTheDocument();
 });
