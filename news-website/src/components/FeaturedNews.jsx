@@ -68,7 +68,7 @@ function FeaturedNews() {
                                 {Array.isArray(newsArticles) && newsArticles.length >= 2 ? newsArticles.slice(0, 2).map((article) => (
                                   <div className="card text-bg-dark" key={article.url}>
                                       <a href={article.url} target="_blank" rel="noreferrer" className="text-decoration-none text-reset">
-                                        <img src={article.image || placeholder} className="card-img" alt={article.title || "Untitled"} />
+                                        <img src={article.image || placeholder} className="card-img" alt={article.title || "Untitled"} style={{ maxHeight: '300px', height: '300px', objectFit: 'cover' }}/>
                                         <div className="card-img-overlay d-flex align-items-end justify-content-start gap-3">
                                             <p className="card-title m-0">{article.source.name ? `${article.source.name.substring(0, 10)}...` : 'Untitled'}</p>
                                             <p className="card-text">{article.publishedAt ? article.publishedAt.substring(0, 10) : ''}</p>

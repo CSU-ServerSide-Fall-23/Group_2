@@ -16,4 +16,9 @@ describe('search functionality tests', () => {
         cy.location('pathname').should('eq', '/search');
         cy.location('search').should('eq', '?q=test');
     });
+
+    // Test the news cards are rendered
+    it('renders NewsCard component', () => {
+        cy.get(".card").should("be.visible")
+    });
 });
