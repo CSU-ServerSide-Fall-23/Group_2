@@ -1,6 +1,14 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
-const ArticlePage = ({ article }) => {
+const ArticlePage = ({ articles }) => {
+  const { title } = useParams();
+  const article = articles.find((article) => encodeURIComponent(article.title) === title);
+
+  if (!article) {
+    return <div>Article not found</div>;
+  }
+
   return (
     <div>
       <h1>{article.title}</h1>
