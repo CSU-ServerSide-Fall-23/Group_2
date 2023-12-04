@@ -65,7 +65,7 @@ function FeaturedNews() {
                         <div className="col-lg-4 col-md-6 mx-auto">
                             <div className="d-flex flex-column flex-grow-1 gap-4 gap-xl-3 my-4 px-md-3 mx-auto mx-xl-5">
                                 <h1 className="text-md-start text-white fw-bolder text-uppercase text-sm-center m-0">Happening Now</h1>
-                                {newsArticles.slice(0, 2).map((article) => (
+                                {Array.isArray(newsArticles) && newsArticles.length >= 2 ? newsArticles.slice(0, 2).map((article) => (
                                   <div className="card text-bg-dark" key={article.url}>
                                       <a href={article.url} target="_blank" rel="noreferrer" className="text-decoration-none text-reset">
                                         <img src={article.image || placeholder} className="card-img" alt={article.title || "Untitled"} />
@@ -75,7 +75,9 @@ function FeaturedNews() {
                                         </div>
                                       </a>
                                     </div>
-                                ))}
+                                )) :
+                                    <p>Oops, sorry. No additional news to display.</p>
+                                }
                             </div>
                         </div>
                     </div>
