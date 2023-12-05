@@ -26,7 +26,6 @@ const SkeleLoader = () => {
       try {
         // Set loading to true while fetching data
         setLoading(true);
-
         // Simulate data fetching
         const result = await fetchData();
         setData(result);

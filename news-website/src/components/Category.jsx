@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import NewsCard from '../NewsCard';
+import Skeleton from "./Skeleton";
+import Error from "./Error";
 
 const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 const API_BASE_URL = process.env.REACT_APP_NEWS_API_BASE_URL;
@@ -26,6 +28,14 @@ function Category() {
                 setLoading(false);
             });
     }, [category]);
+
+    if(loading) {
+        return <Skeleton />
+    }
+
+    if(error) {
+        return <Error />
+    }
 
     return (
         <div>

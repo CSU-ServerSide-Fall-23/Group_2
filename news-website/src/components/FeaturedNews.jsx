@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import placeholder from '../assets/images/news-placeholder.jpg';
 import NewsFeed from "../NewsFeed";
+import Skeleton from "./Skeleton";
+import Error from "./Error";
 
 function FeaturedNews() {
     const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
@@ -19,7 +21,6 @@ function FeaturedNews() {
             .then((response) => {
                 setNewsArticles(response.data.articles);
                 setLoading(false);
-                console.log(response.data.articles);
             })
             .catch((error) => {
                 console.error("Error fetching news for featured", error);
@@ -27,6 +28,14 @@ function FeaturedNews() {
                 setLoading(false);
             });
     }, []);
+
+    if(loading) {
+        return <Skeleton />
+    }
+
+    if(error) {
+        return <Error />
+    }
 
 
     return (
