@@ -12,7 +12,7 @@ function Header() {
 
     const handleSearchSubmit = (e) => {
         e.preventDefault();
-        navigate(`/search?q=${encodeURIComponent(search)}`); // Navigate to search route
+        navigate(`/search?q=${encodeURIComponent(search)}`);
     };
 
     return (

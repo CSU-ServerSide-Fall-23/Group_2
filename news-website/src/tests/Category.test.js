@@ -3,7 +3,6 @@ import { render } from '@testing-library/react';
 import { useParams } from 'react-router-dom';
 import Category from '../components/Category';
 
-// Mock useParams
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useParams: jest.fn(),

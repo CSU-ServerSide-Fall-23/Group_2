@@ -18,7 +18,6 @@ const Footer = () => {
                   key={category}
                   name={category}
                   onClick={(selectedCategory) => {
-                    // Implement category selection logic here if needed
                     console.log(`Selected category: ${selectedCategory}`);
                   }}
                 />

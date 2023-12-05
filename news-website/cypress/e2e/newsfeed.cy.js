@@ -17,21 +17,18 @@ describe('NewsFeed Component', () => {
     ];
   
     beforeEach(() => {
-      cy.visit('http://localhost:3000'); // Replace with your development server URL
-      cy.viewport(1200, 800); // Set a specific viewport size
+      cy.visit('http://localhost:3000');
+      cy.viewport(1200, 800);
     });
   
     it('Should render NewsFeed component correctly', () => {
-      // Ensure the NewsFeed component is visible
       cy.get('.row').should('be.visible');
       cy.get('h1').should('have.text', 'News Feed');
     });
   
     it('Should render NewsCard for each article', () => {
-      // Render the NewsFeed component with sample articles
       cy.get('.col-lg-3').should('have.length', sampleArticles.length);
-  
-      // Check if NewsCard components are rendered for each article
+
       sampleArticles.forEach((article, index) => {
         cy.get('.col-lg-3').eq(index).within(() => {
           cy.get('.card').should('have.attr', 'key', article.url);

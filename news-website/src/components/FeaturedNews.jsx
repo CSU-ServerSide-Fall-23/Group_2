@@ -10,8 +10,8 @@ function FeaturedNews() {
     const API_BASE_URL = process.env.REACT_APP_NEWS_API_BASE_URL;
 
     const [newsArticles, setNewsArticles] = useState([]);
-    const [loading, setLoading] = useState(true); // to be used later for loading indicator ?
-    const [error, setError] = useState(null); // to be used later with error component ?
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         axios

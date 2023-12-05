@@ -24,7 +24,6 @@ function SearchResults() {
                 setSearchResults(data.articles || []);
                 setLoading(false);
             } catch (error) {
-                // Handle error
                 console.error("Error fetching search results", error);
                 setError(error);
             }

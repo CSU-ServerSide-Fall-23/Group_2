@@ -8,7 +8,6 @@ const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 const API_BASE_URL = process.env.REACT_APP_NEWS_API_BASE_URL;
 
 function Category() {
-    // useParams hook gives us access to the URL parameters
     const { category } = useParams();
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);

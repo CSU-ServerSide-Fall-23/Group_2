@@ -3,7 +3,6 @@ describe('FeaturedNews tests', () => {
         cy.visit('http://localhost:3000');
     });
 
-    // test carousel is visible
     it('render carousel', () => {
         cy.get(".carousel").should("be.visible")
     });

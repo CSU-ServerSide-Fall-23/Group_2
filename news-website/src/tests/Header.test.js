@@ -3,7 +3,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 
-// Needs to be wrapped in Router because of useNavigate
 const renderWithRouter = (component) => {
   return {
     ...render(<Router>{component}</Router>),
@@ -22,7 +21,6 @@ test('renders search button', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-// Mock useNavigate
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: jest.fn(),
@@ -35,14 +33,12 @@ describe('Header Component', () => {
 
     const { getByPlaceholderText, getByRole } = render(<Header />);
 
-    // user typing
     const searchInput = getByPlaceholderText('Search');
     fireEvent.change(searchInput, { target: { value: 'test' } });
 
     const form = getByRole('search');
     fireEvent.submit(form);
 
-    // expect navigation to search page
     expect(mockNavigate).toHaveBeenCalledWith('/search?q=test');
   });
 });

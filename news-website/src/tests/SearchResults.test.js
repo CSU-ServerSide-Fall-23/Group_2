@@ -2,7 +2,6 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { useLocation } from 'react-router-dom';
 import SearchResults from '../components/SearchResults';
 
-// Mocking useLocation
 jest.mock('react-router-dom', () => ({
     useLocation: jest.fn(),
 }));

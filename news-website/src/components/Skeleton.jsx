@@ -9,7 +9,6 @@ const LoadingSkeleton = () => (
 );
 
 const fetchData = () => {
-  // Simulate an asynchronous operation (e.g., data fetching) with a delay
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve('Data loaded!');
@@ -24,21 +23,18 @@ const SkeleLoader = () => {
   useEffect(() => {
     const fetchDataAndHandleLoading = async () => {
       try {
-        // Set loading to true while fetching data
         setLoading(true);
-        // Simulate data fetching
         const result = await fetchData();
         setData(result);
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
-        // Set loading to false after data is fetched (or in case of an error)
         setLoading(false);
       }
     };
 
     fetchDataAndHandleLoading();
-  }, []); // Empty dependency array means this effect runs once on mount
+  }, []);
 
   return (
     <div>
@@ -46,7 +42,7 @@ const SkeleLoader = () => {
         <LoadingSkeleton />
       ) : (
         <div>
-          {/* Actual content goes here */}
+
         </div>
       )}
     </div>
