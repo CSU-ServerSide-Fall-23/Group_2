@@ -34,7 +34,7 @@ class ErrorBoundary extends Component {
 
 // Example usage:
 
-class MyComponent extends React.Component {
+class MyError extends React.Component {
   throwError() {
     throw new Error('This is a sample error.');
   }
@@ -44,7 +44,6 @@ class MyComponent extends React.Component {
       <ErrorBoundary>
         {/* The code inside this boundary will be monitored for errors */}
         <div>
-          <h1>Hello, React!</h1>
           <button onClick={this.throwError.bind(this)}>Simulate Error</button>
         </div>
       </ErrorBoundary>
@@ -52,4 +51,4 @@ class MyComponent extends React.Component {
   }
 }
 
-export default MyComponent;
+export default MyError;
