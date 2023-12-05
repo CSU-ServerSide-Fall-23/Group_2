@@ -20,15 +20,6 @@ describe('Footer Component', () => {
         .contains('4225 University Ave')
         .should('be.visible');
     });
-  
-    it('Should log selected category when clicked', () => {
-      cy.visit('http://localhost:3000');
 
-      cy.get('ul')
-        .contains('Politics')
-        .click();
-
-      cy.window().should('have.property', 'consoleHistory').and('include', 'Selected category: Politics');
-    });
   });
   

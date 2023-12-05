@@ -28,10 +28,6 @@ function Category() {
             });
     }, [category]);
 
-    if(loading) {
-        return <Skeleton />
-    }
-
     if(error) {
         return <Error />
     }

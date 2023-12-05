@@ -29,9 +29,6 @@ function FeaturedNews() {
             });
     }, []);
 
-    if(loading) {
-        return <Skeleton />
-    }
 
     if(error) {
         return <Error />

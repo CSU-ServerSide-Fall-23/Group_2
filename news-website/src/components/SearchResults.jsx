@@ -32,10 +32,6 @@ function SearchResults() {
         fetchData();
     }, [searchQuery]);
 
-    if(loading) {
-        return <Skeleton />
-    }
-
     if(error) {
         return <Error />
     }
