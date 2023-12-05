@@ -9,7 +9,6 @@ jest.mock('react-router-dom', () => ({
 describe('SearchResults', () => {
     const searchQuery = 'test';
 
-    // clear mocks before each test
     beforeEach(() => {
         useLocation.mockImplementation(() => ({
             search: `?q=${searchQuery}`,
