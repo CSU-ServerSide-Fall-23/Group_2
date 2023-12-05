@@ -17,7 +17,7 @@ const fetchData = () => {
   });
 };
 
-const MyComponent = () => {
+const SkeleLoader = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
 
@@ -54,4 +54,4 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default SkeleLoader;
