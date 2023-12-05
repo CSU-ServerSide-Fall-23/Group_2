@@ -72,7 +72,7 @@ See the [Live Demo](https://group-2-news-website.onrender.com) - Deployed with [
 
 [Demo 2](https://www.youtube.com/watch?v=5z1dbcHZP_w)
 
-[Demo 3 (Final)]()
+[Demo 3 (Final)](https://www.youtube.com/watch?v=Zn5PLwSY-Dw)
 
 
 ## Team Members
