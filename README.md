@@ -45,7 +45,7 @@ REACT_APP_NEWS_API_BASE_URL=<YOUR BASE URL> ex: https://gnews.io/api/v4 (if you 
 
 4. __Run the Application__:
 ```bash
-npm start
+npm run start
 ```
 
 ## 🧪Testing
